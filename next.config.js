@@ -5,15 +5,16 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  // نادیده گرفتن تمام خطاها برای اینکه فقط سایت بالا بیاید
+  // نادیده گرفتن خطاها برای عبور سریع از بیلد
   eslint: {
+    dirs: ['app', 'components', 'layouts', 'scripts'],
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
 
-  // تنظیم عکس‌ها برای جلوگیری از ارور
+  // تنظیم تصاویر
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -24,7 +25,7 @@ const nextConfig = {
     ],
   },
 
-  // حل مشکل SVG که در پروژه داری
+  // تنظیمات SVG (که در پروژه داری)
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -34,4 +35,5 @@ const nextConfig = {
   }
 };
 
+// فقط کانتنت‌لایر باقی ماند. آنالیزور حذف شد.
 module.exports = withContentlayer(nextConfig);
