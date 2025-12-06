@@ -3,7 +3,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-// تعریف هدرهای امنیتی به صورت ساده
+// تعریف هدرهای امنیتی
 const securityHeaders = [
   { key: 'Content-Security-Policy', value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is; style-src 'self' 'unsafe-inline'; img-src * blob: data:; media-src *.s3.amazonaws.com; connect-src *; font-src 'self'; frame-src giscus.app" },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
@@ -14,8 +14,9 @@ const securityHeaders = [
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' }
 ];
 
-// خروجی نهایی بدون تعریف متغیر اضافه برای جلوگیری از خطا
-module.exports = withBundleAnalyzer(withContentlayer({
+// تنظیمات اصلی
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
@@ -55,4 +56,6 @@ module.exports = withBundleAnalyzer(withContentlayer({
     });
     return config;
   }
-}));
+};
+
+module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
