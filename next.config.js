@@ -3,7 +3,7 @@ const { withContentlayer } = require('next-contentlayer2');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // این گزینه را خاموش کردیم تا بیلد با نسخه Canary کرش نکند
+  // این خط جلوی ارور WorkerError را می‌گیرد
   swcMinify: false,
 
   eslint: {
@@ -13,7 +13,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -23,7 +22,6 @@ const nextConfig = {
       },
     ],
   },
-
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
