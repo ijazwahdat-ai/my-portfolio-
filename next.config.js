@@ -1,16 +1,18 @@
+const { withContentlayer } = require('next-contentlayer2')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // این تنظیم دیگر در نسخه‌های جدید توصیه نمی‌شود
-  // swcMinify: false,
-
+  
   eslint: {
     dirs: ['app', 'components', 'layouts', 'scripts'],
     ignoreDuringBuilds: true,
   },
+
   typescript: {
     ignoreBuildErrors: true,
   },
+
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -20,13 +22,22 @@ const nextConfig = {
       },
     ],
   },
-  webpack: (config) => {
+
+  webpack: (config, { isServer }) => {
+    // حل مشکل contentlayer2
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'contentlayer/generated': 'contentlayer2/generated',
+    }
+
+    // SVG rule
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
-    });
-    return config;
+    })
+    
+    return config
   }
-};
+}
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig)
