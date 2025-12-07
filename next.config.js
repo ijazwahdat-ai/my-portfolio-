@@ -1,10 +1,8 @@
-const { withContentlayer } = require('next-contentlayer2');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // این خط جلوی ارور WorkerError را می‌گیرد
-  swcMinify: false,
+  // این تنظیم دیگر در نسخه‌های جدید توصیه نمی‌شود
+  // swcMinify: false,
 
   eslint: {
     dirs: ['app', 'components', 'layouts', 'scripts'],
@@ -31,4 +29,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withContentlayer(nextConfig);
+module.exports = nextConfig;
