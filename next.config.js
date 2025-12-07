@@ -3,9 +3,9 @@ const { withContentlayer } = require('next-contentlayer2');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  // این گزینه را خاموش کردیم تا بیلد با نسخه Canary کرش نکند
+  swcMinify: false,
 
-  // نادیده گرفتن خطاها برای عبور سریع از بیلد
   eslint: {
     dirs: ['app', 'components', 'layouts', 'scripts'],
     ignoreDuringBuilds: true,
@@ -14,7 +14,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // تنظیم تصاویر
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -25,7 +24,6 @@ const nextConfig = {
     ],
   },
 
-  // تنظیمات SVG (که در پروژه داری)
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -35,5 +33,4 @@ const nextConfig = {
   }
 };
 
-// فقط کانتنت‌لایر باقی ماند. آنالیزور حذف شد.
 module.exports = withContentlayer(nextConfig);
