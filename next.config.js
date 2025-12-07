@@ -1,9 +1,7 @@
-const { withContentlayer } = require('next-contentlayer2')
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  
+
   eslint: {
     dirs: ['app', 'components', 'layouts', 'scripts'],
     ignoreDuringBuilds: true,
@@ -28,6 +26,7 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       'contentlayer/generated': 'contentlayer2/generated',
+      'contentlayer': 'contentlayer2',
     }
 
     // SVG rule
@@ -35,9 +34,9 @@ const nextConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     })
-    
+
     return config
   }
 }
 
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig
