@@ -1,26 +1,25 @@
 ---
 title: Adapting LLaMA-2 for Afghan Telecom Customer Support
 date: '2025-08-18'
-tags: ['LLM', 'Telecom', 'QLoRA', 'AI Research']
+tags: ['Research', 'LLM', 'Telecom', 'QLoRA', 'Llama-2']
 draft: false
-summary: A deep dive into how I fine-tuned Llama-2 on consumer hardware to answer Afghan Telecom queries with 89% accuracy.
+summary: Abstract of my research paper on developing Afghanistan's first domain-specific LLM for the Ministry of Communications (MCIT).
 ---
 
 # Abstract
 
-The adaptation of Large Language Models (LLMs) to specialized, low-resource domains presents a significant engineering challenge. This project addresses these challenges through the development of a domain-specific conversational agent for **telecommunications customer support in Afghanistan**.
+The adaptation of Large Language Models (LLMs) to specialized, low-resource domains presents a significant scientific and engineering challenge. This paper addresses these challenges through a comprehensive case study: the development of a domain-specific conversational agent for **telecommunications customer support in Afghanistan**.
 
-We introduce the first instruction-following dataset for this domain, comprising **1,750 manually validated Q&A pairs**. Leveraging **Quantized Low-Rank Adaptation (QLoRA)**, we demonstrate a resource-efficient methodology for fine-tuning the LLaMA-2-7B model on a single GPU.
+We introduce the first publicly available, instruction-following dataset for this domain, comprising **1,750 manually validated English question-answer pairs**. Leveraging **Quantized Low-Rank Adaptation (QLoRA)**, we demonstrate a resource-efficient methodology for fine-tuning the **LLaMA-2-7B** model on a single, consumer-grade GPU.
 
-## Key Results
+## Key Findings
 
-- **Model:** Llama-2-7b-chat-hf
-- **Technique:** 4-bit Quantization (QLoRA)
-- **Accuracy:** Achieved a high mean score of **89.0/100** for factual correctness in human evaluation by telecom experts.
-- **Infrastructure:** Trained on Google Colab Pro.
+*   **Data Scarcity Solved:** Created the AFTel-1750 dataset covering policies from **AWCC**, Salaam, and Roshan.
+*   **Performance:** The model achieved a high mean score of **89.0/100 for factual correctness** in a systematic human evaluation by 10 local telecom experts.
+*   **Efficiency:** Reduced VRAM usage from ~28GB to ~4GB using 4-bit quantization.
 
 ## Conclusion
 
-This research provides a blueprint for applying state-of-the-art AI in Afghanistan, proving that we can build localized, intelligent agents without needing massive infrastructure.
+This research provides a detailed, reproducible blueprint for applying state-of-the-art LLMs in environments with limited resources. It serves as a technical demonstration of fostering local AI capacity and digital sovereignty in Afghanistan.
 
-[Link to GitHub Repository](https://github.com/ijazwahdat-ai/YOUR-REPO)
+**[View Full Project & Code on GitHub](https://github.com/ijazwahdat-ai/Afghan-Telecom-LLaMA-MCIT)**

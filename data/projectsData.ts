@@ -1,34 +1,35 @@
 const projectsData = [
   {
-    title: 'Afghan Telecom AI Agent (MCIT)',
-    description: `A specialized LLM-based customer support agent designed for the Afghan telecom sector. 
-    Fine-tuned Llama-2-7b using QLoRA technology on a curated dataset of 1,750 local telecom instructions. 
-    Achieved 89% factual accuracy. Integrated with Telegram API for real-time user interaction.`,
-    imgSrc: '/static/images/telecom.png', // عکس تلکام را بسازید و نامش را telecom.png بگذارید
-    href: 'https://github.com/ijazwahdat-ai/YOUR-REPO-LINK',
+    title: 'Telecom Customer Support Agent (Llama-2)',
+    description: `The first domain-adapted LLM for the Afghan telecom sector, engineered during my tenure at MCIT.
+    I fine-tuned Llama-2-7B using QLoRA on a custom dataset of 1,750 QA pairs covering services from AWCC, Salaam, and Roshan.
+    Achieved 89% factual accuracy in expert evaluations for handling USSD codes and bundle inquiries.`,
+    imgSrc: '/static/images/telecom.png',
+    href: 'https://github.com/ijazwahdat-ai/Afghan-Telecom-LLaMA-MCIT',
   },
   {
-    title: 'Automated Academy Registration System',
-    description: `An end-to-end automation system connecting Google Forms, Google Sheets, and Telegram.
-    Built using Google Apps Script (JavaScript). It automatically processes student registrations and sends instant notifications to the academy admin via a Telegram Bot, streamlining the enrollment process.`,
-    imgSrc: '/static/images/academy.png', // عکس فرم یا بات تلگرام اکادمی
-    href: 'https://github.com/ijazwahdat-ai/YOUR-REPO-LINK',
+    title: 'Enterprise Task Automation Suite',
+    description: `A collection of Python-based automation agents designed to optimize operational workflows.
+    Includes an "Excel-to-PowerPoint" reporting bot and an automated Academy Registration System linking Google Forms to Telegram.
+    Demonstrates ability to streamline complex data processing tasks as required in enterprise environments.`,
+    imgSrc: '/static/images/automation.png',
+    href: 'https://github.com/ijazwahdat-ai',
   },
   {
-    title: 'Multisense Weather Assistant',
-    description: `An intelligent conversational bot built with the Rasa Framework.
-    It connects to live Weather APIs to provide real-time forecasts based on user location.
-    Demonstrates strong skills in NLP intent classification and API integration.`,
-    imgSrc: '/static/images/weather.png', // عکس بات هواشناسی
-    href: 'https://github.com/ijazwahdat-ai/YOUR-REPO-LINK',
+    title: 'Multisense Conversational Assistant',
+    description: `An intelligent chatbot built with the Rasa Framework and Python.
+    Integrated with real-time APIs to fetch dynamic data (Weather/Services).
+    Showcases proficiency in Intent Classification, Entity Extraction, and backend integration using Flask.`,
+    imgSrc: '/static/images/weather.png',
+    href: 'https://github.com/ijazwahdat-ai',
   },
   {
-    title: 'Modern AI Portfolio Website',
-    description: `A responsive, high-performance personal portfolio built with Next.js, React, and Tailwind CSS.
-    Showcases my ability to build modern front-end interfaces and deploy web applications using Vercel.
-    (You are currently viewing this project!)`,
-    imgSrc: '/static/images/portfolio.png', // یک اسکرین شات از همین صفحه اول سایت بگیرید
-    href: 'https://github.com/ijazwahdat-ai/my-portfolio',
+    title: 'Portfolio & Research Hub',
+    description: `A modern, responsive web platform built with Next.js and React.
+    Serves as a central hub for my technical research, publications, and open-source contributions.
+    Deployed via Vercel with CI/CD pipelines.`,
+    imgSrc: '/static/images/portfolio.png',
+    href: 'https://my-portfolio-two-jet-j.vercel.app',
   },
 ]
 
